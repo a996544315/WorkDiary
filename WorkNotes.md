@@ -4,7 +4,7 @@
     	
 + 问题描述：**idea前端返回报500错误，IntelliJ Idea控制台没有报错信息。**
 
-+ 环境版本：idea=2018.2，tomcat=8.0.0，x86-win7
++ 环境版本：idea=2018.2，tomcat=8.0.0，OS=x86-win7
 
 + 解决方案：
 	+ 直接去用户目录下查看idea生成的日志：${USER_HOME}/.IntelliJIdea${version}/system/tomcat/${project}/logs/localhost-${date}.log
