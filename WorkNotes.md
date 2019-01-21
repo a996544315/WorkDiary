@@ -1,3 +1,16 @@
+> 2019-01-10
+
+> memcached tomcat
+
++ 问题描述：本地使用tomcat和memcached搭建开发环境时，每次登录之后都又跳转到了登录界面。
+
++ 环境版本：tomcat=8.0.0，memcached=1.4.5
+
++ 解决方案：
+	
+	1. tomcat未设置path路径，导致memcached在处理请求时无法正确获取相应的用户session，导致每次重定向至登录界面
+	2. 修改tomcat的项目path即可解决
+
 > 2019-01-17
 
 > idea 日志输出 tomcat
@@ -22,8 +35,9 @@
 
 + 问题描述：**后台将数组的json字符串转换成beans时，返回java数组元素内的字段值全为null**
 
-+ 环境版本：json-lib=1.9.11
++ 环境版本：json-lib=1.9.1，java=1.8
 
-+ 问题定位：阅读JSONObject源码可知，json-lib不支持对setter方法为builder格式的bean进行解析
++ 解决方案：
 
-+ 解决方案：使用json-lib时不使用builder格式构建setters
+	1. 阅读JSONObject源码可知，json-lib不支持对setter方法为builder格式的bean进行解析
+	2. 使用json-lib时不使用builder格式构建setters
