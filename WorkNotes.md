@@ -39,5 +39,5 @@
 
 + 解决方案：
 
-	* 阅读JSONObject源码可知，json-lib不支持对setter方法为builder格式的bean进行解析
+	* 阅读JSONObject源码可知，json-lib不支持对setter为builder格式的bean进行解析
 	* 使用json-lib时不使用builder格式构建setters
