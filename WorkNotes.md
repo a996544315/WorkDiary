@@ -41,3 +41,14 @@
 
 	* 阅读JSONObject源码可知，json-lib不支持对setter为builder格式的bean进行解析
 	* 使用json-lib时不使用builder格式构建setters
+
+> 2019-01-23
+
+> springMVC 请求参数
+
++ 问题描述：**后台在请求中自动填充数组字段时，VO使用List<String\>类型进行参数接受时报错**
+
++ 解决方案：
+	
+	* 问题定位待查。
+	* 前端拼接成字符串，后端再解析。
