@@ -6,3 +6,6 @@
   + date mmddHHMMYYYY
   + date mmddHHMM.SS
   + date date mmddHHMMYYYY.SS
+
+> 2019-01-23
+> 
