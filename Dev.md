@@ -73,6 +73,6 @@
 
 + 解决方案：
 	* insert into select语句插入；group by去重
-	* 具体语法：insert into TARGET_T select COLUMN_1 as TT_COLUMN_1,COLUMN_2 as TT_COLUMN_2 from ( select COLUMN_1,COLUMN_2 from ANOTHER_T group by COLUMN_1,COLUMN_2)
+	* 具体语法：**insert into** TARGET_T **select** COLUMN_1 as TT_COLUMN_1,COLUMN_2 as TT_COLUMN_2 from ( select COLUMN_1,COLUMN_2 from ANOTHER_T **group by** COLUMN_1,COLUMN_2)
 
 --------------------------------
