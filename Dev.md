@@ -88,3 +88,5 @@
 + 解决方案：
 	* tomcat需要使用对应的jdk版本
 	* R<u>u</u>n\>Run/Debug configuration dialog\>Edit Configurations>设置JRE版本。tomcat8使用JDK7以上
+	
+---------------------------
