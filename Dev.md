@@ -76,3 +76,15 @@
 	* 具体语法：**insert into** TARGET_T **select** COLUMN_1 as TT_COLUMN_1,COLUMN_2 as TT_COLUMN_2 from ( select COLUMN_1,COLUMN_2 from ANOTHER_T **group by** COLUMN_1,COLUMN_2)
 
 --------------------------------
+
+> 2019-01-28
+
+> tomcat idea
+
++ 问题描述：**Tomcat启动显示:unable to ping server at localhost 1099**
+
++ 环境版本：idea=2018.2，tomcat=8.0.0，OS=x86-win7
+
++ 解决方案：
+	* tomcat需要使用对应的jdk版本
+	* R<u>u</u>n\>Run/Debug configuration dialog\>Edit Configurations>设置JRE版本。tomcat8使用JDK7以上
