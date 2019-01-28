@@ -12,9 +12,9 @@
 	+ tomcat未设置path路径，导致memcached在处理请求时无法正确获取相应的用户session，导致每次重定向至登录界面
 	+ 修改tomcat的项目path即可解决
 
-> 2019-01-17
-
 --------------------------------
+
+> 2019-01-17
 
 > idea 日志输出 tomcat
     	
@@ -74,3 +74,5 @@
 + 解决方案：
 	* insert into select语句插入；group by去重
 	* 具体语法：insert into TARGET_T select COLUMN_1 as TT_COLUMN_1,COLUMN_2 as TT_COLUMN_2 from ( select COLUMN_1,COLUMN_2 from ANOTHER_T group by COLUMN_1,COLUMN_2)
+
+--------------------------------
