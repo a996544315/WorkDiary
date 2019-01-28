@@ -1,3 +1,4 @@
+------------------
 > 2019-01-10
 
 > memcached tomcat
@@ -12,6 +13,8 @@
 	+ 修改tomcat的项目path即可解决
 
 > 2019-01-17
+
+--------------------------------
 
 > idea 日志输出 tomcat
     	
@@ -28,6 +31,7 @@
 		2. 修改配置项org.apache.catalina.core.ContainerBase.[Catalina].[localhost].handlers = *.*.**.*
 		3. 在原配置项后新加一个类，两者之间用英文逗号隔开：java.util.logging.ConsoleHandler
 
+--------------------------------
 
 > 2019-01-21
 
@@ -42,6 +46,8 @@
 	* 阅读JSONObject源码可知，json-lib不支持对setter为builder格式的bean进行解析
 	* 使用json-lib时不使用builder格式构建setters
 
+--------------------------------
+
 > 2019-01-23
 
 > springMVC 请求参数
@@ -54,6 +60,8 @@
 	
 	* SpringMVC参数VO内绑定仅支持基本类型+String
 	* 前端拼接成字符串，后端再解析。
+	
+--------------------------------
 
 > 2019-01-28
 
