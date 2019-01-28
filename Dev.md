@@ -54,3 +54,15 @@
 	
 	* SpringMVC参数VO内绑定仅支持基本类型+String
 	* 前端拼接成字符串，后端再解析。
+
+> 2019-01-28
+
+> SQL
+
++ 问题描述：**取出其他表内的某几列（去除重复列）数据插入指定表**
+
++ 环境版本：Oracle12g
+
++ 解决方案：
+	* insert into select语句插入；group by去重
+	* 具体语法：insert into TARGET_T select COLUMN_1 as TT_COLUMN_1,COLUMN_2 as TT_COLUMN_2 from ( select COLUMN_1,COLUMN_2 from ANOTHER_T group by COLUMN_1,COLUMN_2)
