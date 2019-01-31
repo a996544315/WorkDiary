@@ -103,4 +103,4 @@
 	+ JVM分析：
 		+ **不同的ClassLoader导入的同一个class二进制文件被JVM看做是不同的类**
 		+ Class.forName(clzName) = Class.forName(clzName,加载静态区块=true,调用forName方法的实例类的类加载器)。可见：如果不传入ClassLoader参数，将会使用调用者的类加载器来生成Class
-	+ 加载二进制文件时使用自定义的类加载器，生成对象实例时未传入相应的类加载器
+	+ 原因分析：加载二进制文件时使用自定义的类加载器，生成对象实例时未传入相应的类加载器
