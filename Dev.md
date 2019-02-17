@@ -104,3 +104,17 @@
 		+ **不同的ClassLoader导入的同一个class二进制文件被JVM看做是不同的类**
 		+ Class.forName(clzName) = Class.forName(clzName,加载静态区块=true,调用forName方法的实例类的类加载器)。可见：如果不传入ClassLoader参数，将会使用调用者的类加载器来生成Class
 	+ 原因分析：加载二进制文件时使用自定义的类加载器，生成对象实例时未传入相应的类加载器
+	
+---------------------------
+
+> 2019-02-15
+
+> MAVEN 仓库
+
++ 问题描述：**Maven本地仓库有相应的jar包，并且%MAVEN_HOME%/conf/settings.xml内配置了localRepository的相应地址，执行mvn install命令时仍然去中央仓库进行下载**
+
++ 环境版本：Maven=3.5.4 JAVA=1.8 OS=Windows7
+
++ 解决方案：
+	+ 原因分析：本地仓库内的jar包是从三方仓库下载，猜测Maven的某种机制，在对本地jar包进行检测时，如果是从三方仓库下载的，存在一种情况，会再去中央仓库获取一遍，**同样的配置文件以及同样的仓库文件夹，再另一个电脑上未出现该问题。**。
+	+ 解决方案：修改本地仓库jar的远程仓库为中央仓库。将出问题的本地jar包文件夹下的**_remote.repositories**内的naxus=修改为central=。
