@@ -132,3 +132,15 @@
 + 解决方案：
 	+ 原因分析：经过代码排查，不存在使用了不相匹配的非法ClassLoader的情况。然后考虑dex文件问题，在**类初始化**的时候，ART并没有成功加载指定的类，遂怀疑是.dex文件编码存在问题。经确认，是两个dex文件生成时所依赖的**Java环境版本不一致**所导致。
 	+ 解决方案：使用相同的Java环境以及Android Tool环境。
+
+-----------------------------
+
+> 2019-04-22
+
+> JAVA
+
++ 问题描述：**clz.getConstructor(Boolean.class)=>NoSuchMethodException**
+
++ 环境版本：JAVA=8
+
++ 解决方案：根据构造函数参数改为getConstructor(boolean.class),Boolean.class与boolean.class不能通用。
