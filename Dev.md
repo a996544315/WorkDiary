@@ -144,3 +144,21 @@
 + 环境版本：JAVA=8
 
 + 解决方案：根据构造函数参数改为getConstructor(boolean.class),Boolean.class与boolean.class不能通用。
+
+-----------------------------
+
+> 2020-02-26
+> Spring Bean 手动获取失败
+
++ 问题描述：
+	+ 大前提：MyBatis 配置第三方 cache 时，使用注解标记 cache 的实现类。
+	+ 子前提一：第三方 cache 实现时必须创建一个带 String 参数的构造函数，来接受 MyBatis 传入的缓存 ID ，cache 的实现类不能为 bean 。
+	+ 子前提二：cache 实现类需要使用redis配置生成 RedisTemplate，只能通过bean获取，bean 工具类SpringUtil继承 ApplicationContextAware 且使用@Component 由 Spring 自动生成。
+	+ 导致问题：cache 的实现类手动获取 bean 时 applicationContext 为空。
+
++ 环境版本：JAVA=10，SpringBoot=Hoxton.SR1
++ 解决方案：
+	+ 原因分析：对 Spring 的 bean 生成源码 debug 发现，Mapper 生成时 SpringUtil 并未注入。
+	+ 解决方案：两种。
+		1. 将 SpringUtil 移动到 SpringApplication 同包，使其最先注入。
+		2. 在@Mapper上添加 @DependsOn 注解，强制注入顺序。
